@@ -6,14 +6,14 @@ public class Chronometer {
     private long timeEnd;
     private long time;
 
-    public Chronometer(){
+    public Chronometer() {
         time = 0;
     }
 
     /***
      * Initialize the chronometer by making timeStart equals to actual execution time in nanoseconds
      */
-    public void start(){
+    public void start() {
         timeStart = System.nanoTime();
     }
 
@@ -21,9 +21,9 @@ public class Chronometer {
      * Stop the chronometer by making timeEnd equals to actual execution time and subtract the chronometer's
      * timeStart, then, the result is returned and saved on time attribute
      *
-      * @return the duration between start and end
+     * @return the duration between start and end
      */
-    public long stop(){
+    public long stop() {
         timeEnd = System.nanoTime();
         time = getTimeEnd() - getTimeStart();
         timeStart = 0;
@@ -35,7 +35,7 @@ public class Chronometer {
      *
      * @return the duration between start and now
      */
-    public long mark(){
+    public long mark() {
         return System.nanoTime() - timeStart;
     }
 
@@ -46,7 +46,7 @@ public class Chronometer {
      *
      * @return the duration between start and restart
      */
-    public long restart(){
+    public long restart() {
         timeEnd = System.nanoTime();
         time = getTimeEnd() - getTimeStart();
         timeStart = System.nanoTime();

@@ -21,7 +21,7 @@ public class Knapsack {
             for (int i = 1; i <= items.length; i++) {
                 for (int j = 1; j <= capacity; j++) {
                     if (items[i - 1].getWeight() <= j)
-                        //This operation is used because a old combination value can be higher than the new one value discovered
+                        //This operation is used because an old combination value can be higher than the new one value discovered
                         table[i][j] = Math.max(
                                 items[i - 1].getValue() + table[i - 1][j - items[i - 1].getWeight()],
                                 table[i - 1][j]);
